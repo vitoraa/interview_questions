@@ -1,4 +1,4 @@
-const reverseString = str => {
+/* const reverseString = str => {
   var reversedString = ''
 
   for (let i = str.length - 1; i >= 0; i--) {
@@ -6,6 +6,8 @@ const reverseString = str => {
   }
 
   return reversedString
-}
+} */
 
-console.log(reverseString('ola'))
+const reverseString = str => str.split('').reverse().join('')
+
+console.log(reverseString('olá tudo bem Vom Vx'))

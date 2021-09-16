@@ -36,6 +36,22 @@ class LinkedList {
     return array
   }
 
+  remove(index) {
+    if (index >= this.length) return
+
+    if (index === 0) this.head = this.head.next
+
+    let currentNode = this.head
+
+    for (let i = 0; i < index - 1; i++) {
+      currentNode = currentNode.next
+    }
+
+    let removeNode = currentNode.next
+    currentNode.next = removeNode.next
+    this.length--
+  }
+
   insert(index, value) {
     if (index >= this.length) {
       return this.append(value)
@@ -66,4 +82,5 @@ myLinkedList.append(14)
 myLinkedList.prepend(9)
 myLinkedList.prepend(8)
 myLinkedList.insert(7, 999)
+myLinkedList.remove(0)
 console.log(myLinkedList.printList())

@@ -35,6 +35,18 @@ class HashTable {
     }
     return undefined
   }
+
+  keys() {
+    const keysArray = []
+    for (let item of this.data) {
+      if (item) {
+        for (let subItem of item) {
+          keysArray.push(subItem[0])
+        }
+      }
+    }
+    return keysArray
+  }
 }
 
 const myHashTable = new HashTable(50)
@@ -44,3 +56,4 @@ myHashTable.set('mellon', 3000)
 myHashTable.set('mellon', 40000)
 let a = myHashTable.get('mellon')
 console.log(myHashTable, a)
+console.log(myHashTable.keys())

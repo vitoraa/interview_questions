@@ -25,5 +25,7 @@ class HashTable {
 
 const myHashTable = new HashTable(50)
 myHashTable.set('grapes', 1000)
+myHashTable.set('banana', 2000)
+myHashTable.set('mellon', 3000)
 let a = myHashTable.get('grapes')
 console.log(myHashTable, a)

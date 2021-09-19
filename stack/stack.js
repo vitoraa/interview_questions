@@ -34,6 +34,13 @@ class Stack {
   pop() {
     if (this.isEmpty()) return null
 
+    if (this.top === this.bottom) {
+      const holding = this.top
+      this.top = null
+      this.bottom = null
+      return holding
+    }
+
     const holding = this.top
     this.top = this.top.next
 
@@ -50,6 +57,8 @@ const stack = new Stack()
 stack.push('Google')
 stack.push('Amazon')
 stack.push('Microsoft')
+console.log(stack.peek())
+console.log(stack.pop())
 console.log(stack.peek())
 console.log(stack.pop())
 console.log(stack.peek())

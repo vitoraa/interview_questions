@@ -1,4 +1,4 @@
-class Node {
+export class Node {
   constructor(value) {
     this.value = value
     this.next = null
@@ -72,6 +72,22 @@ class LinkedList {
     currentNode.next = newNode
     this.length++
   }
+
+  reverse() {
+    if (this.length <= 1) return
+    let beforeNode = this.head
+    let afterNode = beforeNode.next
+    while (afterNode) {
+      let afterAfterNode = afterNode.next
+      afterNode.next = beforeNode
+      beforeNode = afterNode
+      afterNode = afterAfterNode
+    }
+
+    this.tail = this.head
+    this.head.next = null
+    this.head = beforeNode
+  }
 }
 
 let myLinkedList = new LinkedList(10)
@@ -83,4 +99,5 @@ myLinkedList.prepend(9)
 myLinkedList.prepend(8)
 myLinkedList.insert(7, 999)
 myLinkedList.remove(0)
-console.log(myLinkedList.printList())
+myLinkedList.reverse()
+// console.log(myLinkedList.printList())

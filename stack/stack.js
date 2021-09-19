@@ -21,18 +21,24 @@ class Stack {
     const newNode = new Node(value)
     if (this.isEmpty()) {
       this.bottom = newNode
+      this.top = newNode
     } else {
-      this.top.next = newNode
+      const holding = this.top
+      this.top = newNode
+      this.top.next = holding
     }
-    this.top = newNode
+
     this.length++
   }
 
   pop() {
-    if (!this.isEmpty()) {
+    if (this.isEmpty()) return null
 
-      this.length--
-    }
+    const holding = this.top
+    this.top = this.top.next
+
+    this.length--
+    return holding
   }
 
   isEmpty() {
@@ -45,4 +51,7 @@ stack.push('Google')
 stack.push('Amazon')
 stack.push('Microsoft')
 console.log(stack.peek())
-console.log(stack.first())
+console.log(stack.pop())
+console.log(stack.peek())
+console.log(stack.pop())
+console.log(stack.peek())

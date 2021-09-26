@@ -52,7 +52,8 @@ class BinarySearchTree {
     let nodeAux = this.root
 
     while (true) {
-      if (nodeAux === null || nodeAux.value === value) return nodeAux
+      if (nodeAux === null) return false
+      if (nodeAux.value === value) return nodeAux
 
       if (value >= nodeAux.value) {
         nodeAux = nodeAux.rigth
@@ -73,4 +74,4 @@ tree.insert(15)
 tree.insert(1)
 
 console.log(tree.root)
-console.log(tree.lookup(9))
+console.log(tree.lookup(90))

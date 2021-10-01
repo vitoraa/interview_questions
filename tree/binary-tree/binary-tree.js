@@ -62,6 +62,17 @@ class BinarySearchTree {
       }
     }
   }
+
+  traverse(node) {
+    console.log(node.value)
+    if (node.left) {
+      this.traverse(node.left)
+    }
+    if (node.rigth) {
+      this.traverse(node.rigth)
+    }
+    return
+  }
 }
 
 const tree = new BinarySearchTree()
@@ -75,3 +86,4 @@ tree.insert(1)
 
 console.log(tree.root)
 console.log(tree.lookup(90))
+tree.traverse(tree.root)

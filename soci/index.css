@@ -1,0 +1,13 @@
+.red-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 640px;
+  height: 732px;
+  background: red;
+}
+.blue-box{
+  width: 200px;
+  height: 200px;
+  background: blue;
+}
